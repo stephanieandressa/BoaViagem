@@ -106,6 +106,10 @@
             android:onClick="salvarViagem"
             android:text="@string/salvar"/>
 
+        <Button
+            android:onClick="listar"
+            android:text="@string/listar"/>
+
     </TableLayout>
 
 </ScrollView>

@@ -1,4 +1,4 @@
-package br.edu.usj.boaviagem;
+package br.edu.usj.boaviagem.activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import br.edu.usj.boaviagem.R;
+import br.edu.usj.boaviagem.activities.DashboardActivity;
 
 /**
  * Created by rafael on 04/10/17.

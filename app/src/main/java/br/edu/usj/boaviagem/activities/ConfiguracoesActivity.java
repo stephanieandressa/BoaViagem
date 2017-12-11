@@ -1,8 +1,10 @@
-package br.edu.usj.boaviagem;
+package br.edu.usj.boaviagem.activities;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.support.annotation.Nullable;
+
+import br.edu.usj.boaviagem.R;
 
 /**
  * Created by rafael on 26/10/17.

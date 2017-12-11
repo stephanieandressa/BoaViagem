@@ -1,4 +1,4 @@
-package br.edu.usj.boaviagem;
+package br.edu.usj.boaviagem.activities;
 
 import android.app.ListActivity;
 import android.os.Bundle;
@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import br.edu.usj.boaviagem.R;
 
 /**
  * Created by rafael on 26/10/17.

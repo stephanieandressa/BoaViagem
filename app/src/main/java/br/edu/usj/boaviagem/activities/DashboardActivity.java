@@ -1,4 +1,4 @@
-package br.edu.usj.boaviagem;
+package br.edu.usj.boaviagem.activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,6 +7,11 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import br.edu.usj.boaviagem.activities.ConfiguracoesActivity;
+import br.edu.usj.boaviagem.activities.NovoGastoActivity;
+import br.edu.usj.boaviagem.R;
+import br.edu.usj.boaviagem.activities.NovaViagemActivity;
 
 /**
  * Created by rafael on 18/10/17.

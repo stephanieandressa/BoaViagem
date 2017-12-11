@@ -10,24 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".BoaViagemActivity">
+        <activity android:name=".activities.BoaViagemActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".DashboardActivity" />
+        <activity android:name=".activities.DashboardActivity" />
 
-        <activity android:name=".NovaViagemActivity" />
+        <activity android:name=".activities.NovaViagemActivity" />
 
-        <activity android:name=".NovoGastoActivity" />
+        <activity android:name=".activities.NovoGastoActivity" />
 
-        <activity android:name=".ViagemListActivity" />
+        <activity android:name=".activities.ViagemListActivity" />
 
-        <activity android:name=".GastoListActivity" />
+        <activity android:name=".activities.GastoListActivity" />
 
-        <activity android:name=".ConfiguracoesActivity" />
+        <activity android:name=".activities.ConfiguracoesActivity" />
 
     </application>
 

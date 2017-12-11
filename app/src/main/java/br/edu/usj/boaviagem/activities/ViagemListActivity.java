@@ -1,4 +1,4 @@
-package br.edu.usj.boaviagem;
+package br.edu.usj.boaviagem.activities;
 
 import android.app.AlertDialog;
 import android.app.ListActivity;
@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -15,6 +16,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import br.edu.usj.boaviagem.DAO.ViagemDAO;
+import br.edu.usj.boaviagem.activities.NovoGastoActivity;
+import br.edu.usj.boaviagem.R;
+import br.edu.usj.boaviagem.activities.GastoListActivity;
+import br.edu.usj.boaviagem.activities.NovaViagemActivity;
+import br.edu.usj.boaviagem.entity.Viagem;
 
 /**
  * Created by rafael on 25/10/17.
@@ -25,6 +33,7 @@ public class ViagemListActivity extends ListActivity {
     private List<Map<String, Object>> viagens;
     private AlertDialog alertDialog, dialogConfirmacao;
     private int viagemSelecionada;
+    private ViagemDAO dao;
 
     AdapterView.OnItemClickListener listener = new AdapterView.OnItemClickListener() {
         @Override
@@ -68,6 +77,8 @@ public class ViagemListActivity extends ListActivity {
                                         savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        dao = new ViagemDAO(this);
+
         String[] de = {"imagem", "destino", "data", "total"};
         int[] para = {R.id.id_tipo_viagem, R.id.id_destino,
                     R.id.id_data, R.id.id_valor};
@@ -76,10 +87,6 @@ public class ViagemListActivity extends ListActivity {
                 listarViagens(), R.layout.layout_lista_viagem,
                 de, para);
 
-//        ArrayAdapter<String> adapter =
-//                new ArrayAdapter<String>(this,
-//                        android.R.layout.simple_list_item_1,
-//                        listarViagens());
        setListAdapter(adapter);
 
         ListView listView = getListView();
@@ -93,20 +100,18 @@ public class ViagemListActivity extends ListActivity {
 
         viagens = new ArrayList<Map<String, Object>>();
 
-        Map<String, Object> item =
-                new HashMap<String, Object>();
-        item.put("imagem", R.drawable.negocios);
-        item.put("destino", "São Paulo");
-        item.put("data", "02/02/2017 a 04/02/2017");
-        item.put("total", "Gasto Total R$ 314,98");
-        viagens.add(item);
+        List<Viagem> listaPessoas = dao.listar();
 
-        item = new HashMap<String, Object>();
-        item.put("imagem", R.drawable.lazer);
-        item.put("destino", "Floripa");
-        item.put("data", "14/05/2017 a 22/05/2017");
-        item.put("total", "Gasto Total R$ 25.834,67");
-        viagens.add(item);
+        for(Viagem p: listaPessoas){
+            Map<String, Object> item =
+                    new HashMap<String, Object>();
+            item.put("id", p.getId());
+            item.put("imagem", p.getTipoViagem());
+            item.put("destino", p.getDestino());
+            item.put("data", p.getDataSaida());
+            item.put("total", p.getOrcamento());
+            viagens.add(item);
+        }
 
         return viagens;
     }

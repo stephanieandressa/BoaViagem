@@ -1,4 +1,4 @@
-package br.edu.usj.boaviagem;
+package br.edu.usj.boaviagem.activities;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
@@ -12,6 +12,8 @@ import android.widget.DatePicker;
 import android.widget.Spinner;
 
 import java.util.Calendar;
+
+import br.edu.usj.boaviagem.R;
 
 /**
  * Created by rafael on 25/10/17.
